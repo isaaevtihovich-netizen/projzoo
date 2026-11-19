@@ -1,0 +1,16 @@
+
+<h1>Виды животных</h1>
+
+<a href="{% url 'vid_create' %}">Добавить вид</a>
+
+<ul>
+    {% for vid in vids %}
+        <li>
+            <a href="{% url 'vid_detail' vid.pk %}">{{ vid.Vid_animals }}</a>
+            <a href="{% url 'vid_update' vid.pk %}">Редактировать</a>
+            <a href="{% url 'vid_delete' vid.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Видов животных пока нет.</li>
+    {% endfor %}
+</ul>

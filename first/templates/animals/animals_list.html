@@ -1,0 +1,15 @@
+<h1>Животные</h1>
+
+<a href="{% url 'animals_create' %}">Добавить животное</a>
+
+<ul>
+    {% for animal in animals %}
+        <li>
+            <a href="{% url 'animals_detail' animal.pk %}">{{ animal }}</a>
+            <a href="{% url 'animals_update' animal.pk %}">Редактировать</a>
+            <a href="{% url 'animals_delete' animal.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Животных пока нет.</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,15 @@
+<h1>Должности</h1>
+
+<a href="{% url 'dolznost_create' %}">Добавить должность</a>
+
+<ul>
+    {% for dolznost in dolznosti %}
+        <li>
+            <a href="{% url 'dolznost_detail' dolznost.pk %}">{{ dolznost.Naimenovanye }}</a>
+            <a href="{% url 'dolznost_update' dolznost.pk %}">Редактировать</a>
+            <a href="{% url 'dolznost_delete' dolznost.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Должностей пока нет.</li>
+    {% endfor %}
+</ul>

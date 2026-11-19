@@ -1,0 +1,8 @@
+<h1>Удалить вид "{{ object }}"?</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+</form>
+
+<a href="{% url 'vid_list' %}">Вернуться к списку видов</a>

@@ -1,0 +1,18 @@
+<h1>{{ animal }}</h1>
+
+<p>Дата регистрации: {{ animal.Data_registr_v_zoo }}</p>
+<p>Дата рождения: {{ animal.Data_rozden }}</p>
+<p>Кличка: {{ animal.Klichka }}</p>
+<p>Вид: {{ animal.ID_Vid }}</p>
+<p>Тип: {{ animal.ID_Tip }}</p>
+<p>Климатическая зона: {{ animal.ID_Klimzona }}</p>
+
+{% if animal.photo %}
+    <img src="{{ animal.photo.url }}" alt="{{ animal }}" width="300">
+{% endif %}
+
+<a href="{% url 'animals_list' %}">Вернуться к списку животных</a>
+<a href="{% url 'animals_update' animal.pk %}">Редактировать</a>
+<a href="{% url 'animals_delete' animal.pk %}">Удалить</a>
+
+

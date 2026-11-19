@@ -1,0 +1,15 @@
+<h1>Сотрудники</h1>
+
+<a href="{% url 'sotr_create' %}">Добавить сотрудника</a>
+
+<ul>
+    {% for employee in sotr %}
+        <li>
+            <a href="{% url 'sotr_detail' employee.pk %}">{{ employee.FIO }}</a>
+            <a href="{% url 'sotr_update' employee.pk %}">Редактировать</a>
+            <a href="{% url 'sotr_delete' employee.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Сотрудников пока нет.</li>
+    {% endfor %}
+</ul>

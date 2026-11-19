@@ -1,0 +1,15 @@
+<h1>Типы животных</h1>
+
+<a href="{% url 'tip_create' %}">Добавить тип</a>
+
+<ul>
+    {% for tip in tips %}
+        <li>
+            <a href="{% url 'tip_detail' tip.pk %}">{{ tip.Tip_animals }}</a>
+            <a href="{% url 'tip_update' tip.pk %}">Редактировать</a>
+            <a href="{% url 'tip_delete' tip.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Типов животных пока нет.</li>
+    {% endfor %}
+</ul>

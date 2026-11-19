@@ -1,0 +1,15 @@
+<h1>
+    {% if form.instance.pk %}
+        Редактировать вид
+    {% else %}
+        Добавить вид
+    {% endif %}
+</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+
+<a href="{% url 'vid_list' %}">Вернуться к списку видов</a>

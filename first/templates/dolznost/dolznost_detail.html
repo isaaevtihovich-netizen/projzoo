@@ -1,0 +1,8 @@
+<h1>{{ dolznost.Naimenovanye }}</h1>
+
+<p>Название должности: {{ dolznost.Naimenovanye }}</p>
+<p>Обязанности: {{ dolznost.Obyazannosti }}</p>
+
+<a href="{% url 'dolznost_list' %}">Вернуться к списку должностей</a>
+<a href="{% url 'dolznost_update' dolznost.pk %}">Редактировать</a>
+<a href="{% url 'dolznost_delete' dolznost.pk %}">Удалить</a>

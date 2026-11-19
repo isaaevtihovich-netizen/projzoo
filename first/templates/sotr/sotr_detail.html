@@ -1,0 +1,17 @@
+<h1>{{ employee.FIO }}</h1>
+
+<p>ФИО: {{ employee.FIO }}</p>
+<p>Дата рождения: {{ employee.Data_rozden }}</p>
+<p>Зарплата: {{ employee.zp }}</p>
+<p>Дата приёма: {{ employee.Data_priema }}</p>
+<p>Пол: {{ employee.ID_Pol }}</p>
+<p>Должность: {{ employee.ID_Dolznost }}</p>
+<p>Категория: {{ employee.ID_categor }}</p>
+
+{% if employee.photo %}
+    <img src="{{ employee.photo.url }}" alt="{{ employee.FIO }}" width="300">
+{% endif %}
+
+<a href="{% url 'sotr_list' %}">Вернуться к списку сотрудников</a>
+<a href="{% url 'sotr_update' employee.pk %}">Редактировать</a>
+<a href="{% url 'sotr_delete' employee.pk %}">Удалить</a>

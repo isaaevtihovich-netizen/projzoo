@@ -1,0 +1,7 @@
+<h1>{{ tip.Tip_animals }}</h1>
+
+<p>Название типа: {{ tip.Tip_animals }}</p>
+
+<a href="{% url 'tip_list' %}">Вернуться к списку типов</a>
+<a href="{% url 'tip_update' tip.pk %}">Редактировать</a>
+<a href="{% url 'tip_delete' tip.pk %}">Удалить</a>
